@@ -11,3 +11,10 @@ spec:
       - containerPort: {{ . }}
       {{- end }}
 
+      env:
+        {{- range $k, $v := .Values.label }}
+        - name: {{ $k }}
+          value: {{ $v }}
+        {{- end }}
+
+
