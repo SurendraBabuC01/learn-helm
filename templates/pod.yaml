@@ -6,7 +6,8 @@ spec:
   containers:
     - name: nginx
       image: {{ .Values.imageName }}
-      {{ if .Values.openPort }}
       ports:
-        - containerPort: 80
-      {{ end }}
+        { { - range .Values.ports} }
+        - containerPort: { { . } }
+        { { - end } }
+
