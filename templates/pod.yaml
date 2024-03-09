@@ -2,8 +2,10 @@ apiVersion: v1
 kind: Pod
 metadata:
   name: {{ .Values.podName }}
+  { { - with .Values.labels } }
   labels:
-   {{- include ".Values.labels" . | nindent 4 }}
+    { { - toYaml . | nindent 4 } }
+  { { - end } }
 spec:
   containers:
     - name: nginx
