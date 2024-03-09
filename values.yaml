@@ -81,4 +81,5 @@ tolerations: []
 
 affinity: {}
 
-podName: sample1
+podName: httpd
+imageName: httpd
