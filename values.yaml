@@ -86,3 +86,4 @@ imageName: httpd
 openPort: false
 ports:
   - 80
+  - 8080
